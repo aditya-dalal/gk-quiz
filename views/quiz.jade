@@ -30,7 +30,7 @@ block content
         div.row.hidden(id="success")
             .alert.alert-success Correct
         div.row.hidden(id="failure")
-            .alert.alert-danger Wrong
+            .alert.alert-danger Wrong. Correct Answer:  #{doc.answer}
     script.
         var verify = function() {
             if(document.getElementById("answer").value === "#{doc.answer}") {
