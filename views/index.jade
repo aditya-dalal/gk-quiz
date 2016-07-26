@@ -3,9 +3,15 @@ extends layout
 block content
     div.container
         div.row
-          h1 Welcome Apurva
+          h1.text-center Welcome Apurva
         div.row
-          a.btn.btn-large.btn-success(href="/question", role="button", data-toggle="modal") Add new Question
-          p
+            div.col-md-4
+            div.col-md-4
+                a.btn.btn-large.btn-success.center-block(href="/question", role="button", data-toggle="modal") Add new Question
+                p
+            div.col-md-4
         div.row
-          a.btn.btn-large.btn-success(href="/test", role="button", data-toggle="modal") Take test
+            div.col-md-4
+            div.col-md-4
+                a.btn.btn-large.btn-success.center-block(href="/quiz", role="button", data-toggle="modal") Take test
+            div.col-md-4

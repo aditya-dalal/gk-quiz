@@ -1,0 +1,36 @@
+//
+   Created by aditya.dalal on 26/07/16.
+
+extends layout
+
+block content
+    div.container
+        div.row
+            div.col-md-3
+                p
+                a.text-left(href="/") << Back to home
+        div.row
+            h1.text-center Answer the following question
+        div.row
+            h4 Question: #{doc.question}
+        div.row
+            label Answer:
+            input.form-control(type="text", id="answer")
+            p
+            button.btn.btn-default(onclick='verify()') Submit
+            p
+        div.row.hidden(id="success")
+            .alert.alert-success Correct
+        div.row.hidden(id="failure")
+            .alert.alert-danger Wrong
+    script.
+        var verify = function() {
+            if(document.getElementById("answer").value === "#{doc.answer}") {
+                $("#success").removeClass('hidden')
+                $("#failure").addClass('hidden');
+            }
+            else {
+                $("#success").addClass('hidden');
+                $("#failure").removeClass('hidden')
+            }
+        }

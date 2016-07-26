@@ -10,6 +10,7 @@ var question = require('./model/question');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var questionRoute = require('./routes/question');
+var quiz = require('./routes/quiz');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/question', questionRoute);
+app.use('/quiz', quiz);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

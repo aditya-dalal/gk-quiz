@@ -7,6 +7,7 @@ block content
     div.container
         div.row
             div.col-md-3
+                p
                 a.text-left(href="/") << Back to home
             div.col-md-6
                 h1.text-center Submit a new question here
@@ -22,20 +23,23 @@ block content
             form.form(action="/question", method="post", id="questionForm")
                 div.row
                     div.col-md-3
-                    label Question
-                    textarea.span3(name="question", rows="4", cols="50", placeholder="Enter question")
-                    p
+                    div.col-md-6
+                        label Question:
+                        textarea.form-control(name="question", rows="5", placeholder="Enter question")
+                p
                 div.row
                     div.col-md-3
-                    label Answer/s
-                    textarea.span3(name="answer", rows="2", cols="50", placeholder="Enter comma separated answers")
+                    div.col-md-6
+                        label Answer/s:
+                        textarea.form-control(name="answer", rows="2", cols="50", placeholder="Enter comma separated answers")
+                p
                 div.row
                     button.btn.btn-large.btn-primary.center-block(type="submit") Submit
                     //input.btn.btn-primary(type="submit") Submit
 
-//script.
-//    $(document).ready (function(){
-//        $(".alert").fadeTo(2000, 500).slideUp(500, function(){
-//            $(".alert").alert('close');
-//        });
-//    });
+    script.
+        $(document).ready (function(){
+            $(".alert").fadeTo(2000, 500).slideUp(500, function(){
+                $(".alert").alert('close');
+            });
+        });
