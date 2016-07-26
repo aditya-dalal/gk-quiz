@@ -7,8 +7,9 @@ var bodyParser = require('body-parser');
 
 var db = require('./model/db');
 var question = require('./model/question');
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var users = require('./routes/users');
+var questionRoute = require('./routes/question');
 
 var app = express();
 
@@ -23,7 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', index);
+app.use('/question', questionRoute);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

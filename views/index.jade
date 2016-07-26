@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    div.container
+        div.row
+          h1 Welcome Apurva
+        div.row
+          a.btn.btn-large.btn-success(href="/question", role="button", data-toggle="modal") Add new Question
+          p
+        div.row
+          a.btn.btn-large.btn-success(href="/test", role="button", data-toggle="modal") Take test
