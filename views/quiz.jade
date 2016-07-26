@@ -17,8 +17,16 @@ block content
             label Answer:
             input.form-control(type="text", id="answer")
             p
-            button.btn.btn-default(onclick='verify()') Submit
-            p
+        div.row
+            div.col-md-4
+            div.col-md-2
+                button.btn.btn-default(onclick='verify()') Submit
+            div.col-md-2
+                a.btn.btn-default(href="/quiz/next", role="button") Next Question
+        p
+        div.row
+            -if(done)
+                .alert.alert-info #{done}
         div.row.hidden(id="success")
             .alert.alert-success Correct
         div.row.hidden(id="failure")
